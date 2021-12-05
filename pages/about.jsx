@@ -1,3 +1,5 @@
 export default function About(){
-    return <h1>im emad</h1>
+    return <div className="container">
+        <h1 className="is-size-3">Albums website dec 2021</h1>
+    </div>
 }
