@@ -14,15 +14,13 @@ export default function Home({ albums }) {
       <h1>Home</h1>
       <div class="list-group">
         {albums.map((album) => (
-
-         <Link href={`/albums/${album.id}`} > <a
-            key={album.id}
-           
+        <Link href={"/" + album.id}><a key={album.id}
             class="list-group-item list-group-item-action "
-            aria-current="true"
-          >
+            aria-current="true">
             {album.title}
-          </a></Link>
+          </a>
+          </Link>
+
         ))}
       </div>
     </div>
