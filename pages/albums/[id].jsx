@@ -1,22 +1,10 @@
 import axios from "axios";
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react";
 
-export default function Album() {
+function Album({details, user}) {
     const router = useRouter();
     const { id } = router.query;
-    const [details, setDetails] = useState({});
-    const [user, setUser] = useState({});
-
-    useEffect(() => {
-        if(!id) return;
-
-        axios.get(`https://jsonplaceholder.typicode.com/albums/${id}`).then((res) => {
-            setDetails(res.data);
-            axios.get(`https://jsonplaceholder.typicode.com/users/${res.data.userId}`).then(res =>
-            setUser(res.data));
-        })
-    },[id]);
+    if(!details || !user) return <div>loading ..</div>;
     return <div>
 
 <div>
@@ -34,3 +22,13 @@ export default function Album() {
 
     </div>
 }
+Album.getInitialProps = async ({query}) => {
+    const details = (await axios.get(`https://jsonplaceholder.typicode.com/albums/${query.id}`)).data;
+    const user = (await axios.get(`https://jsonplaceholder.typicode.com/users/${details.userId}`)).data;
+
+    return {
+      details, user 
+    }
+}
+
+export default Album

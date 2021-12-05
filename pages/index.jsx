@@ -1,15 +1,17 @@
 import axios from "axios";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-export default function Home() {
-  const [albums, setAlbums] = useState([]);
+export async function getStaticProps(context) {
+  const res = await axios.get("https://jsonplaceholder.typicode.com/albums");
 
-  useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/albums").then(res => {
-      setAlbums(res.data);
-    })
-  },[])
+  return {
+    props: { albums: res.data }, // will be passed to the page component as props
+  }
+}
+
+
+export default function Home({albums}) {
+
   return <div className="container mt-10 section is-small">
 <div class="columns is-multiline">
 {albums.map(album => <div class="column  is-one-quarter is-centered">
