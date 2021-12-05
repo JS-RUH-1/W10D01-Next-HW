@@ -5,6 +5,6 @@
     * Home page with all the albums displayed from this api `https://jsonplaceholder.typicode.com/albums`
     * About us page
     * Header and Footer 
-    * Details page when clicking on an album show details about the album and the user from the this api `https://jsonplaceholder.typicode.com/users` 
+    * Details page: when clicking on an album show details about the album (`https://jsonplaceholder.typicode.com/albums/`+id) and using the userId from the album details to bring the user details with the following api (`https://jsonplaceholder.typicode.com/users/`+userId) 
     * Custome 404 page
 * Add some styling to the pages 
