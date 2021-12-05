@@ -2,29 +2,33 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from ".././../styles/Home.module.css";
 function Details() {
+  const [Ready, setReady] = useState(false);
   const [Data, setData] = useState({});
   const [Title, setTitle] = useState("");
   const [Loading, setLoading] = useState(true);
   const router = useRouter();
-  const userId = router.query.userId;
-  const id = router.query.id;
 
   useEffect(async () => {
-    // ==========> FETCH USER ID
-    const res = await fetch(
-      "https://jsonplaceholder.typicode.com/users/" + userId
-    );
-    const data = await res.json();
-    setData(data);
-    // ==========> FETCH ID
-    const resTitle = await fetch(
-      "https://jsonplaceholder.typicode.com/albums/" + id
-    );
-    const dataTitle = await resTitle.json();
-    setTitle(dataTitle.title);
-    // ==========> STOP LOADING
-    setLoading(false);
-  }, [Loading]);
+    if (router && router.query) {
+      const userId = router.query.userId;
+      const id = router.query.id;
+      // ==========> FETCH USER ID
+      const res = await fetch(
+        "https://jsonplaceholder.typicode.com/users/" + userId
+      );
+      const data = await res.json();
+      setData(data);
+      // ==========> FETCH ID
+      const resTitle = await fetch(
+        "https://jsonplaceholder.typicode.com/albums/" + id
+      );
+      const dataTitle = await resTitle.json();
+      setTitle(dataTitle.title);
+
+      // ==========> STOP LOADING
+      setLoading(false);
+    }
+  }, [router]);
 
   if (Loading) return <div>LOADING ...</div>;
   return (
