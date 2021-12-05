@@ -1,0 +1,53 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+nav{
+  display: flex;
+justify-content: space-around;
+background-color:rgb(191, 178, 204);
+align-items: center;
+height: 100px;
+}
+ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-gap: 10px;
+  list-style: none;
+  margin-bottom: 15%;
+}
+h1{
+ text-align: center;
+ color:rgb(216, 138, 35);
+}
+span{
+  color:rgb(216, 138, 35);
+}
+.card{
+ 
+  width: 30vw;
+  margin: 30px;
+}
+footer{
+  background-color:rgb(191, 178, 204);
+  height: 100px;
+  text-align: center;
+  position: fixed;
+    bottom: 0;
+    width: 100vw;
+display:flex;
+align-items: center;
+justify-content: center;
+}
