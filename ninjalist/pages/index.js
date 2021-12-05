@@ -25,25 +25,28 @@ export default function Home({albums}) {
       <title> Ninja | Home</title>
       <meta name="keywords" ninjas=""/>
     </Head>
-      <div> 
+    <h1 className={styles.title}>Homepage</h1>
+
+      <div className={styles.parent}> 
         
-      <h1 className={styles.title}>Homepage</h1>
+       
 
         {albums.map(album =>(
 
         <Link href={'/ninjas/'+album.userId} key={album.id}> 
         <a> 
-        <p className={styles.text}>{album.id}-{album.title}</p>
+        <p className={styles.text}>{album.id} - {album.title}</p>
         </a>
         </Link>
         ))}
 
       
-       <Link href='/ninjas'>
-       <a className={styles.btn}>see Ninja Listing</a></Link>
-       
+        
          
       </div>
+      <Link href='/ninjas'>
+       <a className={styles.btn}>see Ninja Listing</a></Link>
+       
     </>
   )
 }
