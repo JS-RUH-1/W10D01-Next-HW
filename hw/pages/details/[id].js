@@ -18,9 +18,9 @@ export const getStaticPaths = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/albums");
   const data = await res.json();
   //store the id of all albums
-  const paths = data.map((album) => {
+  const paths = data.map((e) => {
     return {
-      params: { id: album.id.toString() },
+      params: { id: e.id.toString() },
     };
   });
 
