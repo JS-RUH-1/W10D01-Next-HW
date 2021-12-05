@@ -37,10 +37,14 @@ nav {
   justify-content: center;
   align-items: flex-end;
   border-bottom: 1px solid #ddd;
+  background-color: rgb(201, 201, 201);
 }
 nav a {
   color: #333;
   margin-left: 12px;
+}
+nav a:hover {
+  text-shadow: 0 0 5px rgb(0, 0, 0);
 }
 
 footer {

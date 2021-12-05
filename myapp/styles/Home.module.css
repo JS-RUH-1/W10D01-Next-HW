@@ -21,26 +21,30 @@
   width: 50%;
   text-align: center;
   margin: 5px;
+  background-color: rgb(230, 230, 230);
 }
 .address .title {
+  margin: 0;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(201, 201, 201);
 }
 .company {
   width: 50%;
   text-align: center;
   margin: 5px;
+  background-color: rgb(230, 230, 230);
 }
 
 .company .title {
+  margin: 0;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(201, 201, 201);
 }
 
 .titleOfAlbum {
