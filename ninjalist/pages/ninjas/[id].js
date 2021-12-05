@@ -1,3 +1,5 @@
+
+import styles from '../../styles/Ninjas.module.css'
 export const getStaticPaths = async ()=>{
 
     const res = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -32,13 +34,13 @@ return{
 const Details = ({ninja}) => {
     return (<>
     
-    <div className="">
+    <div>
 
-        <h2> Name:{ninja.name} </h2> 
+        <h2> Name: <span className={styles.font}>{ninja.name}</span>   </h2> 
 
-        <p>Email:{ninja.email}</p>
-        <p>Website:{ninja.website}</p>
-        <p>City:{ninja.address.city}</p>
+        <p>Email: <span className={styles.font}>{ninja.email}</span>  </p>
+        <p>Website: <span className={styles.font}>{ninja.website}</span>  </p>
+        <p>City: <span className={styles.font}>{ninja.address.city}</span> </p>
          
     </div>
     </>  );

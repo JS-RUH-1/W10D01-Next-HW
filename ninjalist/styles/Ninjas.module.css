@@ -9,3 +9,9 @@
 .single:hover{
     border-left: 8px solid #4979ff;
 }
+.font{
+    color: brown;
+    font-family:monospace;
+    font-size: 150%;
+}
+ 
