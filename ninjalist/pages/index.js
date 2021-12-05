@@ -8,7 +8,10 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <>
-
+    <Head>
+      <title> Ninja | Home</title>
+      <meta name="keywords" ninjas=""/>
+    </Head>
       <div> 
         
       <h1 className={styles.title}>Homepage</h1>
