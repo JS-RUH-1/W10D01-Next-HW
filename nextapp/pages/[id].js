@@ -1,3 +1,4 @@
+import styles from '../styles/Home.module.css'
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/albums');
@@ -33,7 +34,7 @@ export const getStaticPaths = async () => {
 
   const Details = ({ prop, user }) => {
     return (
-      <div className = {styles.detail}>
+      <div className={styles.detail}>
         <h3>Name: {user.name}</h3>
         <h3>UserName: {user.username}</h3>
         <h3>Title: {prop.title }</h3>
