@@ -14,3 +14,58 @@ a {
 * {
   box-sizing: border-box;
 }
+
+nav {
+  background-color: rgb(23, 53, 53);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  margin-right: 20px;
+  color: #fff;
+}
+
+.albumsContainer, .singleInfo, .not-found {
+  background-color: rgb(160, 210, 210);
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.albums {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ele {
+  width: 30%;
+  height: 10vh;
+  margin: 20px 10px;
+  -webkit-box-shadow: 0px 0px 15px -12px #000000; 
+  box-shadow: 0px 0px 15px -12px #000000;
+  border-radius: 7px 7px 0px 0px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  margin-top: 20px;
+  height: 30vh;
+  background-color: rgb(3, 96, 96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+span {
+  color: rgb(19, 67, 172);
+}

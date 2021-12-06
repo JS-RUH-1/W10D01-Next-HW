@@ -1,39 +1,35 @@
-export const getStaticPaths = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/albums');
-    const data = await res.json();
+import axios from 'axios'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
 
-    // map data to an array of path objects with params (id)
-    const paths = data.map(album => {
-        return {
-            params: { id: album.id.toString() }
+
+const Details = () => {
+
+    const router = useRouter()
+    const {id} = router.query
+    const [singleAlbums, setSingleAlbums] = useState({}) 
+    const [user, setUser] = useState({}) 
+
+
+    useEffect(() => {
+        const getSingleAlbums = async () => {
+            const res = await axios.get('https://jsonplaceholder.typicode.com/albums/' + id)
+            const res2 = await axios.get("https://jsonplaceholder.typicode.com/users/" + id)
+            // console.log(res);
+            // console.log(res2);
+            setSingleAlbums(res.data)
+            setUser(res2.data)
         }
-    })
 
-    return {
-        paths,
-        fallback: false
-    }
-}
+        getSingleAlbums()
+    },[])
 
-export const getStaticProps = async (context) => {
-    const id = context.params.id;
-    const res = await fetch('https://jsonplaceholder.typicode.com/albums/' + id);
-    const data = await res.json();
 
-    const res2 = await fetch('https://jsonplaceholder.typicode.com/users/' + data.userId);
-    const data2 = await res2.json();
-
-    return {
-        props: { album: data, user: data2 }
-    }
-}
-
-const Details = ({ album, user }) => {
     return (
-        <div>
-            <h1>{album.title}</h1>
-            <p>{user.name}</p>
-
+        <div className="singleInfo">
+            <h1>Single Album</h1>
+            <h3>Name is: <span>{user.username}</span></h3>
+            <h4>Album is: <span>{singleAlbums.title}</span></h4>
         </div>
     );
 }
