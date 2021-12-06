@@ -51,3 +51,22 @@ display:flex;
 align-items: center;
 justify-content: center;
 }
+.input{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  border-radius: 5px;
+}
+button{
+  border-radius: 5px;
+  padding:4px;
+  margin: 2px; 
+}
+.bbuton{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  border-radius: 5px;
+  padding:4px;
+  margin: 2px;
+}
